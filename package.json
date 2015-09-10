@@ -1,0 +1,23 @@
+{
+  "name": "mbinfo",
+  "version": "1.0.0",
+  "description": "MBTiles info utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandthakker/mbinfo.git"
+  },
+  "keywords": [
+    "MBTiles"
+  ],
+  "author": "Anand Thakker <vestibule@anandthakker.net> (http://anandthakker.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anandthakker/mbinfo/issues"
+  },
+  "homepage": "https://github.com/anandthakker/mbinfo#readme"
+}

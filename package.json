@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/anandthakker/mbinfo/issues"
   },
-  "homepage": "https://github.com/anandthakker/mbinfo#readme"
+  "homepage": "https://github.com/anandthakker/mbinfo#readme",
+  "dependencies": {
+    "mbtiles": "^0.8.0",
+    "split": "^1.0.0"
+  }
 }

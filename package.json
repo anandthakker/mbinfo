@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/anandthakker/mbinfo#readme",
   "dependencies": {
+    "JSONStream": "^1.0.4",
     "mbtiles": "^0.8.0",
     "split": "^1.0.0"
   }

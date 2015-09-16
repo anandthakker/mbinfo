@@ -2,6 +2,7 @@
 
 var Mbtiles = require('mbtiles')
 var split = require('split')
+var JSONStream = require('JSONStream')
 
 /* eslint-disable no-new */
 new Mbtiles(process.argv[2], function (err, mbtiles) {
@@ -26,11 +27,15 @@ new Mbtiles(process.argv[2], function (err, mbtiles) {
 })
 
 function count (db) {
-  var query = 'SELECT COUNT(*) AS count, MAX(LENGTH(tile_data)) AS max_size, SUM(LENGTH(tile_data)) AS total_size, zoom_level as z FROM tiles GROUP BY zoom_level'
+  var output = JSONStream.stringify()
+  output.pipe(process.stdout)
+  var query = 'SELECT COUNT(*) AS count, AVG(LENGTH(tile_data)) AS mean_size, MAX(LENGTH(tile_data)) AS max_size, SUM(LENGTH(tile_data)) AS total_size, zoom_level as z FROM tiles GROUP BY zoom_level'
+
   db.each(query, function (err, result) {
     result = result || {}
     if (err) throw err
-
-    console.log(result)
+    output.write(result)
+  }, function () {
+    output.end()
   })
 }
